@@ -5,8 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top Foods in Las Piñas</title>
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Royal and playful fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Baloo 2', cursive, Arial, sans-serif;
+      background: 
+        radial-gradient(circle at 10% 10%, #fbbf24 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #3b82f6 0%, transparent 30%),
+        radial-gradient(circle at 50% 90%, #10b981 0%, transparent 40%),
+        linear-gradient(135deg, #fdf6e3 0%, #f0f6ff 100%);
+      color: #22223b;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #3b82f6 70%, #10b981 100%);
+      padding: 2.2rem 1rem 1.5rem 1rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 16px rgba(59,130,246,0.13);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      letter-spacing: 2px;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(16,185,129,0.13), 0 4px 24px #3b82f6;
+      font-weight: 900;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 22px;
+      color: white;
+      font-weight: 600;
+      background: rgba(16,185,129,0.18);
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+      font-family: 'Baloo 2', cursive, Arial, sans-serif;
+      border: 2px solid transparent;
+    }
+    nav a:hover {
+      background: #fbbf24;
+      color: #3b82f6;
+      transform: scale(1.08);
+      box-shadow: 0 4px 16px rgba(251,191,36,0.13);
+      border-color: #3b82f6;
+    }
+    main {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 36px 4vw 32px 4vw;
+      background: rgba(255,255,255,0.95);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(59,130,246,0.09);
+      min-height: 60vh;
+      animation: fadeIn 0.8s ease-in;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    main h2 {
+      font-family: 'Playfair Display', serif;
+      color: #3b82f6;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      font-size: 2.1rem;
+      text-align: center;
+      font-weight: 700;
+      text-shadow: 0 2px 8px #fbbf24;
+    }
+    main > p {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      font-family: 'Baloo 2', cursive, Arial, sans-serif;
+    }
+    .food-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 6px 24px rgba(59,130,246,0.13), 0 0px 0px #fff;
+      border: 2.5px solid #fbbf24;
+      padding: 22px 10px 18px 10px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      margin-bottom: 32px;
+    }
+    .food-card:hover {
+      transform: scale(1.05) translateY(-8px) rotate(-1deg);
+      box-shadow: 0 16px 40px rgba(59,130,246,0.18), 0 0px 0px #fff;
+      border-color: #3b82f6;
+      z-index: 2;
+    }
+    .food-card img {
+      width: 100%;
+      max-width: 260px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 2px 18px rgba(251,191,36,0.13);
+      margin-bottom: 18px;
+      border: 2px solid #3b82f6;
+      background: #e0e7ef;
+      transition: border 0.3s;
+    }
+    .food-card h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      color: #3b82f6;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px #fbbf24;
+    }
+    .food-card p {
+      font-size: 1.08rem;
+      color: #22223b;
+      margin: 10px 0 18px 0;
+      text-align: center;
+      min-height: 48px;
+      font-family: 'Baloo 2', cursive, Arial, sans-serif;
+    }
+    .food-card button {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+      font-family: 'Baloo 2', cursive, Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    .food-card button:hover {
+      background: #fbbf24;
+      color: #3b82f6;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 4px 16px rgba(251,191,36,0.18);
+    }
+    footer {
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      color: #fffbe7;
+      text-align: center;
+      padding: 1.2rem 0 1rem 0;
+      margin-top: 40px;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 -2px 12px rgba(59,130,246,0.10);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #10b981;
+    }
+    /* Decorative floating circles for more life */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 8s infinite alternate;
+    }
+    .circle1 { width: 180px; height: 180px; background: #3b82f6; top: 60px; left: -80px; }
+    .circle2 { width: 120px; height: 120px; background: #fbbf24; top: 420px; right: -60px; animation-delay: 2s;}
+    .circle3 { width: 90px; height: 90px; background: #10b981; bottom: 80px; left: 40px; animation-delay: 4s;}
+    @keyframes float {
+      0% { transform: translateY(0) scale(1);}
+      100% { transform: translateY(-30px) scale(1.08);}
+    }
+    @media (max-width: 700px) {
+      .circle1 { width: 100px; height: 100px; top: 30px; left: -40px;}
+      .circle2 { width: 70px; height: 70px; top: 320px; right: -30px;}
+      .circle3 { width: 50px; height: 50px; bottom: 30px; left: 10px;}
+    }
+    @media (max-width: 480px) {
+      main {
+        padding: 10px 2vw;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
   <header>
     <h1>Top Foods in Las Piñas City</h1>
     <nav>
@@ -23,45 +230,44 @@
   </header>
 
   <main>
-    <h2>Welcome Food Lovers!</h2>
+    <h2>Credits & Acknowledgements</h2>
     <p>
-      Las Piñas City is not only famous for its Bamboo Organ and vibrant culture but also
-      for its wide variety of mouthwatering local dishes. From hearty soups to sweet delicacies,
-      the city offers something for every craving. Explore the top 5 must-try foods below.
+      This website was created as a school project to showcase the top foods of Las Piñas City.<br>
+      Special thanks to the following sources for images and inspiration:
     </p>
 
     <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1617196039897-3bb40f19a1e1" alt="Bulalo">
+      <img src="https://www.iankewks.com/wp-content/uploads/2025/01/IMG_3767-500x375.jpg" alt="Bulalo">
       <h3>Bulalo</h3>
-      <p>A hot beef marrow stew perfect for rainy days. Known for its rich broth and tender beef shanks.</p>
+      <p>Image by iankewks.com</p>
       <a href="food1.html"><button>Read More</button></a>
     </div>
 
     <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1626082921787-1e2585fa1313" alt="Pancit Malabon">
+      <img src="https://assets.unileversolutions.com/recipes-v2/237857.jpg" alt="Pancit Malabon">
       <h3>Pancit Malabon</h3>
-      <p>A noodle dish topped with seafood, eggs, and savory sauce, popular in family gatherings.</p>
+      <p>Image by Knorr/Unilever Solutions</p>
       <a href="food2.html"><button>Read More</button></a>
     </div>
 
     <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1598514982516-5b9f1c8c7c6f" alt="Lechon">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8EIq_EeuXTDjYrgrUHP49TQHj3ZC3N99eNg&s" alt="Lechon">
       <h3>Lechon</h3>
-      <p>Famous roasted pig with crispy skin and flavorful meat, a staple in celebrations.</p>
+      <p>Image from Google Images</p>
       <a href="food3.html"><button>Read More</button></a>
     </div>
 
     <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1603894584373-5a0be1e5e6f6" alt="Halo-Halo">
+      <img src="https://www.foodandwine.com/thmb/oybMSWdgpwqYxBW9EFSdIUmf57U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/halo-halo-FT-RECIPE0924-28931a658de3439d9719f83d5a6dfc2c.jpeg" alt="Halo-Halo">
       <h3>Halo-Halo</h3>
-      <p>A colorful Filipino dessert made of shaved ice, milk, fruits, beans, and leche flan.</p>
+      <p>Image by Food & Wine</p>
       <a href="food4.html"><button>Read More</button></a>
     </div>
 
     <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Bibingka">
+      <img src="https://themayakitchen.com/wp-content/uploads/2018/11/ASSORTED-MINI-BIBINGKA.jpg" alt="Bibingka">
       <h3>Bibingka</h3>
-      <p>A soft rice cake baked with banana leaves, topped with salted egg and cheese.</p>
+      <p>Image by The Maya Kitchen</p>
       <a href="food5.html"><button>Read More</button></a>
     </div>
   </main>
