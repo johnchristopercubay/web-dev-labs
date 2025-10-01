@@ -1,0 +1,79 @@
+That's a great simple and responsive starting point\! I've given it a complete visual refresh using a **clean, high-contrast, professional dark theme** with a pop of color for the boxes.
+
+Here is the updated, more appealing code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Responsive Flexbox</title>
+    <style>
+        /* Global Styles for a Dark Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            margin: 0;
+            padding: 40px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Flex Container */
+        .container {
+            display: flex;
+            flex-direction: column; /* Mobile-first: Stack vertically */
+            gap: 20px; /* Increased spacing */
+            max-width: 900px; /* Limits width on large screens */
+            width: 95%;
+        }
+
+        /* Box Styling */
+        .box {
+            background-color: #212121; /* Dark card background */
+            border: 2px solid #6200EE; /* Vibrant accent border color (Deep Purple) */
+            border-radius: 10px; /* Rounded corners */
+            padding: 30px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #6200EE;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+
+        .box:hover {
+            background-color: #333333; /* Slightly lighter on hover */
+            border-color: #BB86FC; /* Lighter purple glow effect */
+            transform: scale(1.02); /* Slight lift/enlarge effect */
+            box-shadow: 0 6px 20px rgba(98, 0, 238, 0.6); /* Color-matching shadow/glow */
+            cursor: pointer;
+        }
+
+        /* Desktop View (min-width: 768px) */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Desktop: Arrange horizontally */
+                justify-content: space-between;
+            }
+            .box {
+                flex: 1; /* Makes all boxes take up equal space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+
+</body>
+</html>
+```

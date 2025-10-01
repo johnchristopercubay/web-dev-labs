@@ -1,0 +1,102 @@
+I can definitely make your responsive grid gallery design more appealing\!
+
+I've updated the CSS to give it a **sleek, dark mode aesthetic** with improved contrast, rounded corners, and a subtle hover effect to make the layout feel more modern and professional.
+
+Here is the enhanced code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Responsive Grid Gallery</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text for contrast */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Style */
+        h1 {
+            text-align: center;
+            padding: 40px 10px 20px 10px;
+            font-size: 2.5em;
+            color: #4CAF50; /* Accent color for the title */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Grid Container */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px; /* Increased gap for visual breathing room */
+            padding: 10px 40px 40px 40px;
+            max-width: 1200px; /* Max width for large screens */
+            margin: 0 auto; /* Center the container */
+        }
+        
+        /* Gallery Item Design */
+        .gallery-item {
+            background-color: #2e2e2e; /* Slightly lighter dark card background */
+            border-radius: 12px; /* Soft rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Soft shadow */
+            padding: 30px; 
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+            height: 150px; /* Fixed height for uniformity */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5); /* Accent color glow on hover */
+            cursor: pointer;
+            background-color: #383838; /* Slightly brighter on hover */
+        }
+
+        /* Responsive Breakpoints (Same logic as before, but with updated styles) */
+
+        /* Tablet View: 2 columns */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                padding: 20px;
+            }
+        }
+
+        /* Desktop View: 3 columns */
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PICTURES</h1>
+
+    <div class="container">
+        <div class="gallery-item">Picture 1</div>
+        <div class="gallery-item">Picture 2</div>
+        <div class="gallery-item">Picture 3</div>
+        <div class="gallery-item">Picture 4</div>
+        <div class="gallery-item">Picture 5</div>
+        <div class="gallery-item">Picture 6</div>
+    </div>
+
+</body>
+</html>
+```
