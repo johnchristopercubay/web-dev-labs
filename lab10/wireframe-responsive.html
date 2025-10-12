@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Two-Column Layout</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fdf6e3 0%, #f0f6ff 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 32px 16px;
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.96);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(59,130,246,0.09);
+        }
+        .text-section {
+            background-color: #f0f0f0;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.07);
+        }
+        .text-section h2 {
+            color: #3b82f6;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(59,130,246,0.09);
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .text-section, .image-section {
+                flex: 1;
+            }
+            .text-section {
+                margin-right: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>JOHN WALANG CAFE ☕</h2>
+            <p>This photo captures a simple moment of daily comfort: a steaming cup of coffee ready to start the day. It's all about the cozy ritual of a morning brew.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://st2.depositphotos.com/5355656/7824/i/950/depositphotos_78249960-stock-photo-hot-cafe-latte-and-coffee.jpg" alt="A steaming cup of coffee on a wooden table.">
+        </div>
+    </div>
+
+</body>
+</html>

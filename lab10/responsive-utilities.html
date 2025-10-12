@@ -4,21 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Card Layout</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Optional: Add some custom styling for better visualization */
+        body {
+            background: linear-gradient(135deg, #fdf6e3 0%, #f0f6ff 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Baloo 2', Arial, sans-serif;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #3b82f6;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #fbbf24;
+        }
+        .lead {
+            color: #10b981;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .card {
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(59,130,246,0.09);
+            border: none;
+            transition: transform 0.18s;
+        }
+        .card:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.13);
+        }
         .card-img-top {
             height: 150px;
             object-fit: cover;
-            background-color: #f8f9fa; /* Light background for placeholder effect */
+            background-color: #f8f9fa;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            font-size: 1.1rem;
+        }
+        .card-title {
+            color: #3b82f6;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .btn {
+            border-radius: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.07) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(251,191,36,0.13);
+        }
+        @media (max-width: 700px) {
+            h1 { font-size: 1.3rem; }
+            .lead { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container py-5">
-        <h1 class="mb-4">Responsive Card Grid</h1>
+        <h1>Responsive Card Grid</h1>
         <p class="lead">3 Cards are side-by-side on large screens, and stack on mobile.</p>
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -65,6 +118,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
