@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Click Event</title>
+    <style>
+        :root{
+            --bg: #0f1724; /* deep navy */
+            --card: #0b1020;
+            --muted: #9aa4b2;
+            --accent: #7dd3fc; /* light blue */
+            --accent-2: #60a5fa; /* blue */
+            --glass: rgba(255,255,255,0.03);
+            --radius: 14px;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+        }
+
+        html,body{
+            height:100%;
+            margin:0;
+            background: linear-gradient(180deg, #071027 0%, #071a2a 60%);
+            color: #e6eef6;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .wrap{
+            min-height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:40px 20px;
+        }
+
+        .card{
+            width:100%;
+            max-width:720px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+            border-radius:var(--radius);
+            padding:36px;
+            box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        h1{
+            margin:0 0 8px 0;
+            font-size:28px;
+            letter-spacing:-0.2px;
+        }
+
+        p.lead{
+            margin:0 0 20px 0;
+            color:var(--muted);
+        }
+
+        .controls{
+            display:flex;
+            gap:14px;
+            flex-wrap:wrap;
+            margin-top:8px;
+        }
+
+        .btn{
+            appearance:none;
+            -webkit-appearance:none;
+            border: none;
+            padding:12px 18px;
+            border-radius:10px;
+            cursor:pointer;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            color:var(--accent);
+            border: 1px solid rgba(125,211,252,0.12);
+            transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+            font-weight:600;
+        }
+
+        .btn:hover{ transform: translateY(-3px); box-shadow: 0 8px 20px rgba(14,165,233,0.08); }
+
+        .btn.primary{
+            background: linear-gradient(180deg, var(--accent), var(--accent-2));
+            color:#062235;
+            border: none;
+            box-shadow: 0 8px 28px rgba(96,165,250,0.18);
+        }
+
+        .btn.ghost{
+            background: transparent;
+            color:var(--muted);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* Toast */
+        .toast{
+            position: fixed;
+            left:50%;
+            transform: translateX(-50%) translateY(20px);
+            bottom:28px;
+            background: rgba(6,18,30,0.9);
+            color: #cfeefb;
+            padding:12px 18px;
+            border-radius:10px;
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+            opacity:0;
+            pointer-events:none;
+            transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .18s ease;
+            border:1px solid rgba(125,211,252,0.08);
+            font-weight:600;
+        }
+
+        .toast.show{
+            transform: translateX(-50%) translateY(0);
+            opacity:1;
+            pointer-events:auto;
+        }
+
+        @media (max-width:520px){
+            .card{ padding:20px; }
+            h1{ font-size:20px }
+            .controls{ gap:10px }
+            .btn{ padding:10px 14px }
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Button!</h1>
+    
+    <button onclick="alert('Thanks for clicking! (Inline)')">
+        Click Me (Inline)
+    </button>
+    
+    <button id="js-button">
+        Click Me (JS File)
+    </button>
+    
+    <script src="button-event.js"></script>
+</body>
+</html>v
