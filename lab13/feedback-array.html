@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Array</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .feedback-list {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+        .feedback-list li {
+            background: #ffffff;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Feedback</h1>
+    <p>See what our customers are saying below:</p>
+
+    <ul class="feedback-list" id="feedbackList"></ul>
+
+    <script>
+        let feedbacks = [];
+        feedbacks.push("Great coffee!");
+        feedbacks.push("Nice ambiance");
+        feedbacks.push("Friendly staff.");
+
+        const feedbackList = document.getElementById("feedbackList");
+
+        // Loop through the feedbacks array and display each feedback on the page
+        for (let i = 0; i < feedbacks.length; i++) {
+            const listItem = document.createElement("li");
+            listItem.textContent = feedbacks[i];
+            feedbackList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
