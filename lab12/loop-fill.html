@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3: Loop Fill</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .output {
+            display: inline-block;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 20px;
+        }
+        .output p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loop Output Below:</h1>
+    <div class="output" id="output"></div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        // Loop to generate numbers and display them
+        for (let i = 0; i <= 4; i++) {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = `Number: ${i}`;
+            outputDiv.appendChild(paragraph);
+        }
+    </script>
+</body>
+</html>
